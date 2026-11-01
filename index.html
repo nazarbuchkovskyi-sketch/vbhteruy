@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Teste de Francês 9.º ano</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a Seyès school notebook — red margin rule on the left, one column of rules + exercises, keys at the end */
+:root{
+  --paper:#fbfbfd; --ink:#1d2340; --muted:#5b6286; --blue:#2647b8; --red:#c8323c;
+  --rule-bg:#eef2ff; --line:#d6dcf2; --ok:#1d7a4a;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141829; --ink:#e6e9f7; --muted:#9aa2c6; --blue:#8ea6ff; --red:#ff7a82;
+  --rule-bg:#1c2240; --line:#2f3760; --ok:#5fd39a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141829; --ink:#e6e9f7; --muted:#9aa2c6; --blue:#8ea6ff; --red:#ff7a82;
+  --rule-bg:#1c2240; --line:#2f3760; --ok:#5fd39a; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 80px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet{border-left:2px solid var(--red);padding-left:clamp(12px,3vw,28px)}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--blue)}
+h2{font-size:clamp(22px,3.6vw,30px);font-weight:800;margin-top:56px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+h3{font-size:21px;font-weight:600;margin-top:36px;color:var(--blue)}
+h4{font-size:17px;font-weight:600;margin-top:22px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.lead{color:var(--muted);margin:.5em 0 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font:500 13px var(--mono);color:var(--muted)}
+nav.toc{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+nav.toc a{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:6px;color:var(--ink);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--blue);outline:none}
+nav.toc b{display:block;font-family:var(--display);color:var(--blue)}
+nav.toc small{color:var(--muted)}
+.rule{background:var(--rule-bg);border-radius:6px;padding:16px 18px;margin-top:16px}
+.rule > :first-child{margin-top:0}
+.rule .tag{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.ex{margin-top:26px}
+.ex .n{font:500 12px var(--mono);color:var(--red);letter-spacing:.08em}
+.ex .q{font-weight:600}
+.hint{color:var(--muted);font-style:italic;font-size:15px}
+ol,ul{padding-left:1.4em;margin:.5em 0}
+li{margin:.25em 0}
+.b{display:inline-block;min-width:7.5em;border-bottom:1.5px solid var(--muted);margin:0 2px;vertical-align:-2px}
+.b.s{min-width:3.5em}.b.l{min-width:14em}
+.tw{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-weight:600;color:var(--blue);font-size:14px}
+td:first-child{font-weight:600}
+.conj td,.conj th{text-align:center}.conj td:first-child,.conj th:first-child{text-align:left}
+.conj{font-variant-numeric:tabular-nums}
+em.end{font-style:normal;color:var(--red);font-weight:600}
+.bank{display:flex;flex-wrap:wrap;gap:6px;margin:.6em 0}
+.bank span{border:1px dashed var(--blue);border-radius:4px;padding:1px 8px;font-size:15px}
+.choice{white-space:nowrap}
+.choice i{font-style:normal;color:var(--blue)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 28px}
+.cols > *{min-width:0}
+button.say{font:600 15px var(--display);background:var(--blue);color:var(--paper);border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+button.say:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+button.say.stop{background:var(--red)}
+details{margin-top:10px;border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+summary{cursor:pointer;font-weight:600;color:var(--muted)}
+.audio{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:12px}
+.audio .rate{font:500 13px var(--mono);color:var(--muted)}
+.room{max-width:100%;height:auto;display:block;margin-top:12px;border:1px solid var(--line);border-radius:6px;background:var(--rule-bg)}
+.room text{fill:var(--ink);font-family:var(--display);font-size:13px}
+.key h3{color:var(--ok)}
+.key li{margin:.15em 0}
+.key b{color:var(--ok)}
+.check li{list-style:"☐  "}
+footer{margin-top:48px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.print-only{display:none}
+@media print{
+  :root{--paper:#fff;--ink:#111;--muted:#444;--blue:#1f3d9e;--red:#b5242e;--rule-bg:#f0f3fc;--line:#ccd;--ok:#1d6a40;color-scheme:light}
+  body{font-size:12pt}
+  .audio,details,nav.toc{display:none!important}
+  .print-only{display:block}
+  @page{margin:14mm 12mm}
+  .wrap{padding-block:0}
+  h2{margin-top:28px;break-after:avoid}
+  h3,h4{break-after:avoid}
+  .ex,svg,tr{break-inside:avoid}
+  #K,#T{break-before:page}
+  footer{margin-top:16px}
+}
+</style>
+
+<div class="wrap"><div class="sheet">
+
+<header>
+  <div class="eyebrow">Escola Secundária Santana Castilho · 9.º ano · novembro 2026</div>
+  <h1>Préparation au test de français</h1>
+  <p class="lead">Подготовительный тест по темам учителя: <b>Unité 0 — La rentrée, ça me plaît !</b> и <b>Unité 1 — Mon avenir, ça me parle !</b> Структура такая же, как на настоящем тесте: A — Compréhension orale, B — Vocabulaire, C — Grammaire. В каждой теме сначала правило или словарь, потом упражнения. Ответы (corrigés) — в конце.</p>
+  <div class="meta"><span>A · Compréhension orale</span><span>B · Vocabulaire</span><span>C · Grammaire</span><span>Corrigés</span></div>
+  <nav class="toc" aria-label="Содержание">
+    <a href="#A"><b>A · Compréhension orale</b><small>3 текста с озвучкой: rentrée, repas, maison</small></a>
+    <a href="#B"><b>B · Vocabulaire</b><small>общая лексика, matériel scolaire, aliments</small></a>
+    <a href="#C"><b>C · Grammaire</b><small>prépositions, partitifs, présent</small></a>
+    <a href="#K"><b>Corrigés</b><small>ключи ко всем упражнениям</small></a>
+  </nav>
+</header>
+
+<!-- ====================== A ====================== -->
+<section id="A">
+<h2>Activité A — Compréhension orale</h2>
+<div class="rule">
+  <div class="tag">Как работать</div>
+  <p>Нажми <b>▶ Écouter</b> — текст прочитает французский голос браузера (если голоса нет, пусть кто-нибудь прочитает текст вслух). Сначала прочитай вопросы, потом слушай <b>два раза</b>. Текст (transcription) открывай только для проверки. Темы — из Unité 0: школа и школьные принадлежности, досуг, еда и здоровый образ жизни, дом, домашние дела, каникулы и транспорт.</p>
+</div>
+
+<h3>Document 1 — La rentrée de Léa</h3>
+<div class="audio">
+  <button class="say" type="button" data-text="t1" id="say1">▶ Écouter</button>
+  <span class="rate">скорость ~0,85</span>
+</div>
+<details><summary>Transcription (для проверки)</summary>
+<p id="t1">Salut ! Je m'appelle Léa, j'ai quatorze ans et je suis en troisième au collège Victor Hugo, à Lyon. C'est la rentrée ! Dans mon sac à dos, j'ai une trousse avec deux stylos, un crayon, une gomme et une règle. J'ai aussi un classeur, des cahiers et une calculatrice pour les maths. Ma matière préférée, c'est l'anglais. Après les cours, je fais du vélo avec mon frère ou je joue au volley. Le soir, je surfe sur Internet et je poste des photos sur Insta. Le mercredi après-midi, je vais à la piscine.</p>
+</details>
+
+<div class="ex"><div class="n">A1.1</div><p class="q">Coche (✓) la bonne réponse.</p>
+<ol type="a">
+  <li>Léa est en … □ quatrième □ troisième □ seconde</li>
+  <li>Dans sa trousse, il n'y a pas de … □ gomme □ règle □ ciseaux</li>
+  <li>Pour les maths, elle a … □ une calculatrice □ un compas □ un ordinateur</li>
+  <li>Sa matière préférée, c'est … □ les maths □ le français □ l'anglais</li>
+</ol></div>
+<div class="ex"><div class="n">A1.2</div><p class="q">Vrai (V) ou Faux (F) ?</p>
+<ol type="a">
+  <li>Léa habite à Lyon. <span class="b s"></span></li>
+  <li>Elle fait du vélo avec sa sœur. <span class="b s"></span></li>
+  <li>Le soir, elle poste des photos sur Insta. <span class="b s"></span></li>
+  <li>Le mercredi après-midi, elle va au cinéma. <span class="b s"></span></li>
+</ol></div>
+
+<h3>Document 2 — Une journée équilibrée</h3>
+<div class="audio"><button class="say" type="button" data-text="t2" id="say2">▶ Écouter</button></div>
+<details><summary>Transcription (для проверки)</summary>
+<p id="t2">Le matin, au petit déjeuner, Hugo boit du lait et mange des céréales avec une banane. Il ne boit pas de café. À midi, à la cantine, il mange de la viande ou du poisson avec du riz et des légumes. Au goûter, il prend du pain avec du chocolat et un jus d'orange. Le soir, au dîner, la famille mange de la soupe, de la salade et du fromage. Hugo boit beaucoup d'eau, il dort huit heures par nuit et il fait du sport trois fois par semaine. Il limite le temps passé devant les écrans.</p>
+</details>
+
+<div class="ex"><div class="n">A2.1</div><p class="q">Complète le tableau : qu'est-ce que Hugo mange et boit ?</p>
+<div class="tw"><table>
+  <tr><th>Le petit déjeuner</th><th>Le déjeuner</th><th>Le goûter</th><th>Le dîner</th></tr>
+  <tr><td style="font-weight:400">&nbsp;<br>&nbsp;<br>&nbsp;</td><td></td><td></td><td></td></tr>
+</table></div></div>
+<div class="ex"><div class="n">A2.2</div><p class="q">Vrai (V) ou Faux (F) ? Corrige les phrases fausses.</p>
+<ol type="a">
+  <li>Hugo boit du café le matin. <span class="b s"></span></li>
+  <li>Il dort huit heures par nuit. <span class="b s"></span></li>
+  <li>Il fait du sport deux fois par semaine. <span class="b s"></span></li>
+  <li>Il passe beaucoup de temps devant les écrans. <span class="b s"></span></li>
+</ol></div>
+
+<h3>Document 3 — La maison de Sami</h3>
+<div class="audio"><button class="say" type="button" data-text="t3" id="say3">▶ Écouter</button></div>
+<details><summary>Transcription (для проверки)</summary>
+<p id="t3">Sami habite dans une maison avec un jardin. Au rez-de-chaussée, il y a le salon, la cuisine et les toilettes. Au premier étage, il y a trois chambres et la salle de bains. Dans sa chambre, le lit est à côté de la fenêtre et le bureau est en face du lit. Sur le bureau, il y a un ordinateur et une lampe. Sous le lit, il y a ses baskets. À la maison, Sami range sa chambre et sort la poubelle ; sa sœur fait la vaisselle. En juillet, la famille part en vacances à la mer, en train. Dans sa valise, Sami met un maillot de bain, des lunettes de soleil et une serviette de plage.</p>
+</details>
+
+<div class="ex"><div class="n">A3.1</div><p class="q">Entoure la bonne option.</p>
+<ol type="a">
+  <li>La chambre de Sami est <span class="choice"><i>au rez-de-chaussée</i> / <i>au premier étage</i></span>.</li>
+  <li>Le bureau est <span class="choice"><i>à côté du lit</i> / <i>en face du lit</i></span>.</li>
+  <li>Sous le lit, il y a <span class="choice"><i>ses baskets</i> / <i>son sac à dos</i></span>.</li>
+  <li>Sami <span class="choice"><i>fait la vaisselle</i> / <i>sort la poubelle</i></span>.</li>
+  <li>La famille part <span class="choice"><i>à la montagne en voiture</i> / <i>à la mer en train</i></span>.</li>
+</ol></div>
+<div class="ex"><div class="n">A3.2</div><p class="q">Réponds : qu'est-ce que Sami met dans sa valise ? (3 objets)</p>
+<p><span class="b l"></span></p></div>
+</section>
+
+<!-- ====================== B ====================== -->
+<section id="B">
+<h2>Activité B — Vocabulaire</h2>
+<div class="rule">
+  <div class="tag">Что будет на тесте</div>
+  <p>1) <b>Tradução de vocabulário geral das aulas</b> — перевод слов с уроков (французский ↔ португальский). 2) <b>Os materiais escolares.</b> 3) <b>Os alimentos e bebidas.</b> Учи существительные <b>всегда с артиклем</b> (le / la / l' / les), потому что от рода зависит грамматика (du / de la, à côté du / de la).</p>
+</div>
+
+<h3>B1 · Vocabulaire général (Unité 0 + Unité 1)</h3>
+
+<h4>L'école et la rentrée</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le collège</td><td>a escola (2.º/3.º ciclo)</td><td>коллеж (средняя школа)</td></tr>
+<tr><td>le lycée</td><td>a escola secundária</td><td>лицей (старшая школа)</td></tr>
+<tr><td>la classe</td><td>a turma / a sala de aula</td><td>класс</td></tr>
+<tr><td>la matière</td><td>a disciplina</td><td>школьный предмет</td></tr>
+<tr><td>l'emploi du temps (m.)</td><td>o horário</td><td>расписание</td></tr>
+<tr><td>la récré(ation)</td><td>o intervalo</td><td>перемена</td></tr>
+<tr><td>la cantine</td><td>a cantina</td><td>столовая</td></tr>
+<tr><td>le / la professeur(e), le / la prof</td><td>o / a professor(a)</td><td>учитель / учительница</td></tr>
+<tr><td>l'élève (m./f.)</td><td>o / a aluno(a)</td><td>ученик / ученица</td></tr>
+<tr><td>les devoirs (m.)</td><td>os trabalhos de casa</td><td>домашнее задание</td></tr>
+<tr><td>la note</td><td>a nota</td><td>оценка</td></tr>
+</table></div>
+
+<h4>Les loisirs et les réseaux sociaux</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>jouer au foot / au volley</td><td>jogar futebol / vólei</td><td>играть в футбол / волейбол</td></tr>
+<tr><td>faire du vélo / du surf</td><td>andar de bicicleta / fazer surf</td><td>кататься на велосипеде / заниматься сёрфингом</td></tr>
+<tr><td>danser · lire</td><td>dançar · ler</td><td>танцевать · читать</td></tr>
+<tr><td>prendre des photos</td><td>tirar fotografias</td><td>фотографировать</td></tr>
+<tr><td>se promener · se reposer</td><td>passear · descansar</td><td>гулять · отдыхать</td></tr>
+<tr><td>surfer sur Internet</td><td>navegar na Internet</td><td>сидеть в интернете</td></tr>
+<tr><td>le profil · le compte</td><td>o perfil · a conta</td><td>профиль · аккаунт</td></tr>
+<tr><td>les abonnés · les commentaires</td><td>os seguidores · os comentários</td><td>подписчики · комментарии</td></tr>
+</table></div>
+
+<h4>Le corps humain et la santé</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>la tête · les cheveux</td><td>a cabeça · o cabelo</td><td>голова · волосы</td></tr>
+<tr><td>les yeux · le nez · la bouche</td><td>os olhos · o nariz · a boca</td><td>глаза · нос · рот</td></tr>
+<tr><td>le bras · la main · le doigt</td><td>o braço · a mão · o dedo</td><td>рука (от плеча) · кисть · палец</td></tr>
+<tr><td>le ventre</td><td>a barriga</td><td>живот</td></tr>
+<tr><td>la jambe · le genou · le pied</td><td>a perna · o joelho · o pé</td><td>нога · колено · ступня</td></tr>
+<tr><td>dormir 8 heures · faire du sport</td><td>dormir 8 horas · fazer desporto</td><td>спать 8 часов · заниматься спортом</td></tr>
+<tr><td>se brosser les dents</td><td>lavar os dentes</td><td>чистить зубы</td></tr>
+</table></div>
+
+<h4>Les vêtements et les magasins</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le pantalon · le jean</td><td>as calças · as calças de ganga</td><td>брюки · джинсы</td></tr>
+<tr><td>la jupe · la robe</td><td>a saia · o vestido</td><td>юбка · платье</td></tr>
+<tr><td>le t-shirt · la chemise · le pull</td><td>a t-shirt · a camisa · a camisola</td><td>футболка · рубашка · свитер</td></tr>
+<tr><td>le blouson · les baskets</td><td>o blusão · os ténis</td><td>куртка · кроссовки</td></tr>
+<tr><td>le chapeau · les lunettes de soleil</td><td>o chapéu · os óculos de sol</td><td>шляпа · солнечные очки</td></tr>
+<tr><td>la boucherie · la boulangerie</td><td>o talho · a padaria</td><td>мясная лавка · булочная</td></tr>
+<tr><td>la poissonnerie · l'épicerie</td><td>a peixaria · a mercearia</td><td>рыбный магазин · бакалея</td></tr>
+<tr><td>la librairie · la pharmacie</td><td>a livraria · a farmácia</td><td>книжный магазин · аптека</td></tr>
+</table></div>
+
+<h4>La maison et les tâches ménagères</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>la maison · l'appartement (m.)</td><td>a casa · o apartamento</td><td>дом · квартира</td></tr>
+<tr><td>le rez-de-chaussée · le premier étage</td><td>o rés-do-chão · o primeiro andar</td><td>первый этаж · второй этаж</td></tr>
+<tr><td>le salon · la cuisine</td><td>a sala de estar · a cozinha</td><td>гостиная · кухня</td></tr>
+<tr><td>la chambre · la salle de bains</td><td>o quarto · a casa de banho</td><td>спальня · ванная</td></tr>
+<tr><td>le jardin · le balcon · le toit</td><td>o jardim · a varanda · o telhado</td><td>сад · балкон · крыша</td></tr>
+<tr><td>la fenêtre · la porte</td><td>a janela · a porta</td><td>окно · дверь</td></tr>
+<tr><td>le lit · l'armoire (f.) · le bureau</td><td>a cama · o roupeiro · a secretária</td><td>кровать · шкаф · письменный стол</td></tr>
+<tr><td>la chaise · le canapé · le fauteuil</td><td>a cadeira · o sofá · o cadeirão</td><td>стул · диван · кресло</td></tr>
+<tr><td>le frigo · le four</td><td>o frigorífico · o forno</td><td>холодильник · духовка</td></tr>
+<tr><td>faire la vaisselle</td><td>lavar a loiça</td><td>мыть посуду</td></tr>
+<tr><td>passer l'aspirateur · faire la poussière</td><td>aspirar · limpar o pó</td><td>пылесосить · вытирать пыль</td></tr>
+<tr><td>faire son lit · sortir la poubelle</td><td>fazer a cama · levar o lixo</td><td>заправлять кровать · выносить мусор</td></tr>
+</table></div>
+
+<h4>Les vacances et les transports</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>la valise · la tente</td><td>a mala de viagem · a tenda</td><td>чемодан · палатка</td></tr>
+<tr><td>le maillot de bain · la serviette de plage</td><td>o fato de banho · a toalha de praia</td><td>купальник · пляжное полотенце</td></tr>
+<tr><td>l'appareil photo (m.) · le sac de couchage</td><td>a máquina fotográfica · o saco-cama</td><td>фотоаппарат · спальный мешок</td></tr>
+<tr><td>en bus · en voiture · en train · en avion</td><td>de autocarro · de carro · de comboio · de avião</td><td>на автобусе · на машине · на поезде · на самолёте</td></tr>
+<tr><td>à pied · à vélo · à moto</td><td>a pé · de bicicleta · de mota</td><td>пешком · на велосипеде · на мотоцикле</td></tr>
+</table></div>
+
+<h4>Unité 1 — L'orientation et les métiers</h4>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le métier · la profession</td><td>a profissão</td><td>профессия</td></tr>
+<tr><td>les études · le stage</td><td>os estudos · o estágio</td><td>учёба · стажировка</td></tr>
+<tr><td>le conseiller / la conseillère d'orientation</td><td>o / a psicólogo(a) escolar</td><td>школьный профориентолог</td></tr>
+<tr><td>le Brevet des collèges · le Bac</td><td>o exame do 9.º ano · o exame do 12.º ano</td><td>экзамен после 9 класса · выпускной экзамен</td></tr>
+<tr><td>la voie générale / professionnelle</td><td>a via geral / profissional</td><td>общее / профессиональное направление</td></tr>
+<tr><td>infirmier / infirmière · médecin</td><td>enfermeiro(a) · médico(a)</td><td>медбрат / медсестра · врач</td></tr>
+<tr><td>vendeur / vendeuse · cuisinier / cuisinière</td><td>vendedor(a) · cozinheiro(a)</td><td>продавец · повар</td></tr>
+<tr><td>informaticien / informaticienne · ingénieur(e)</td><td>informático(a) · engenheiro(a)</td><td>айтишник · инженер</td></tr>
+</table></div>
+
+<h3>B2 · Le matériel scolaire</h3>
+<div class="tw"><table>
+<tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le cahier</td><td>o caderno</td><td>тетрадь</td></tr>
+<tr><td>le livre · le dictionnaire</td><td>o livro · o dicionário</td><td>книга · словарь</td></tr>
+<tr><td>le stylo</td><td>a caneta</td><td>ручка</td></tr>
+<tr><td>le crayon</td><td>o lápis</td><td>карандаш</td></tr>
+<tr><td>le feutre · le surligneur</td><td>a caneta de feltro · o marcador</td><td>фломастер · текстовыделитель</td></tr>
+<tr><td>la gomme</td><td>a borracha</td><td>ластик</td></tr>
+<tr><td>le taille-crayon</td><td>o afia-lápis</td><td>точилка</td></tr>
+<tr><td>la règle · l'équerre (f.)</td><td>a régua · o esquadro</td><td>линейка · угольник</td></tr>
+<tr><td>le compas · le rapporteur</td><td>o compasso · o transferidor</td><td>циркуль · транспортир</td></tr>
+<tr><td>les ciseaux (m. pl.)</td><td>a tesoura</td><td>ножницы</td></tr>
+<tr><td>la colle (le bâton de colle)</td><td>a cola</td><td>клей</td></tr>
+<tr><td>la trousse</td><td>o estojo</td><td>пенал</td></tr>
+<tr><td>le sac à dos · le cartable</td><td>a mochila · a pasta</td><td>рюкзак · портфель</td></tr>
+<tr><td>le classeur · la feuille</td><td>o dossiê · a folha</td><td>папка-регистратор · лист бумаги</td></tr>
+<tr><td>l'agenda (m.)</td><td>a agenda</td><td>ежедневник (дневник)</td></tr>
+<tr><td>la calculatrice</td><td>a calculadora</td><td>калькулятор</td></tr>
+<tr><td>l'ordinateur (portable) (m.)</td><td>o computador (portátil)</td><td>компьютер (ноутбук)</td></tr>
+<tr><td>le tableau</td><td>o quadro</td><td>доска</td></tr>
+</table></div>
+
+<h3>B3 · Les aliments et les boissons</h3>
+<div class="tw"><table>
+<tr><th>Les repas</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le petit déjeuner</td><td>o pequeno-almoço</td><td>завтрак</td></tr>
+<tr><td>le déjeuner</td><td>o almoço</td><td>обед</td></tr>
+<tr><td>le goûter</td><td>o lanche</td><td>полдник</td></tr>
+<tr><td>le dîner</td><td>o jantar</td><td>ужин</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Les aliments</th><th>Português</th><th>Русский</th></tr>
+<tr><td>le pain · le beurre · la confiture</td><td>o pão · a manteiga · a compota</td><td>хлеб · сливочное масло · варенье</td></tr>
+<tr><td>le lait · le fromage · le yaourt</td><td>o leite · o queijo · o iogurte</td><td>молоко · сыр · йогурт</td></tr>
+<tr><td>les céréales · l'œuf (m.)</td><td>os cereais · o ovo</td><td>хлопья · яйцо</td></tr>
+<tr><td>la viande · le poulet · le jambon</td><td>a carne · o frango · o fiambre</td><td>мясо · курица · ветчина</td></tr>
+<tr><td>le poisson</td><td>o peixe</td><td>рыба</td></tr>
+<tr><td>le riz · les pâtes</td><td>o arroz · a massa</td><td>рис · макароны</td></tr>
+<tr><td>les pommes de terre · les frites</td><td>as batatas · as batatas fritas</td><td>картофель · картошка фри</td></tr>
+<tr><td>les légumes · la salade · la tomate · la carotte</td><td>os legumes · a salada · o tomate · a cenoura</td><td>овощи · салат · помидор · морковь</td></tr>
+<tr><td>la soupe</td><td>a sopa</td><td>суп</td></tr>
+<tr><td>les fruits · la pomme · la banane · la fraise</td><td>a fruta · a maçã · a banana · o morango</td><td>фрукты · яблоко · банан · клубника</td></tr>
+<tr><td>le gâteau · le chocolat · les bonbons</td><td>o bolo · o chocolate · os rebuçados</td><td>торт · шоколад · конфеты</td></tr>
+<tr><td>le sucre · le sel · l'huile (f.)</td><td>o açúcar · o sal · o azeite / óleo</td><td>сахар · соль · растительное масло</td></tr>
+</table></div>
+<div class="tw"><table>
+<tr><th>Les boissons</th><th>Português</th><th>Русский</th></tr>
+<tr><td>l'eau (f.)</td><td>a água</td><td>вода</td></tr>
+<tr><td>le jus d'orange</td><td>o sumo de laranja</td><td>апельсиновый сок</td></tr>
+<tr><td>le café · le thé</td><td>o café · o chá</td><td>кофе · чай</td></tr>
+<tr><td>le chocolat chaud</td><td>o chocolate quente</td><td>горячий шоколад (какао)</td></tr>
+<tr><td>le soda</td><td>o refrigerante</td><td>газировка</td></tr>
+</table></div>
+
+<h3>Exercices de vocabulaire</h3>
+
+<div class="ex"><div class="n">B·1</div><p class="q">Traduis en portugais.</p>
+<div class="cols">
+<ol type="a">
+  <li>le cahier <span class="b"></span></li>
+  <li>la gomme <span class="b"></span></li>
+  <li>la trousse <span class="b"></span></li>
+  <li>le petit déjeuner <span class="b"></span></li>
+  <li>la viande <span class="b"></span></li>
+</ol>
+<ol type="a" start="6">
+  <li>les légumes <span class="b"></span></li>
+  <li>la cuisine <span class="b"></span></li>
+  <li>faire la vaisselle <span class="b"></span></li>
+  <li>le pantalon <span class="b"></span></li>
+  <li>le métier <span class="b"></span></li>
+</ol></div></div>
+
+<div class="ex"><div class="n">B·2</div><p class="q">Traduis en français (avec l'article : le, la, l', les).</p>
+<div class="cols">
+<ol type="a">
+  <li>a régua <span class="b"></span></li>
+  <li>a mochila <span class="b"></span></li>
+  <li>a tesoura <span class="b"></span></li>
+  <li>o queijo <span class="b"></span></li>
+  <li>o sumo de laranja <span class="b"></span></li>
+  <li>o pão <span class="b"></span></li>
+</ol>
+<ol type="a" start="7">
+  <li>a água <span class="b"></span></li>
+  <li>o quarto <span class="b"></span></li>
+  <li>o comboio <span class="b"></span></li>
+  <li>o pé <span class="b"></span></li>
+  <li>os trabalhos de casa <span class="b"></span></li>
+  <li>o horário <span class="b"></span></li>
+</ol></div></div>
+
+<div class="ex"><div class="n">B·3</div><p class="q">Trouve l'intrus (лишнее слово) et entoure-le.</p>
+<ol type="a">
+  <li>le stylo – le crayon – le feutre – le fromage</li>
+  <li>la pomme – la banane – la fraise – le poulet</li>
+  <li>le lait – le jus d'orange – le thé – le riz</li>
+  <li>la règle – la gomme – le frigo – la trousse</li>
+  <li>le beurre – le yaourt – le fromage – la carotte</li>
+  <li>la cuisine – le salon – la chambre – la boulangerie</li>
+</ol></div>
+
+<div class="ex"><div class="n">B·4</div><p class="q">Classe les mots dans la bonne colonne.</p>
+<div class="bank"><span>l'eau</span><span>le fromage</span><span>la pomme</span><span>le poulet</span><span>le thé</span><span>le yaourt</span><span>la tomate</span><span>le poisson</span><span>le soda</span><span>le beurre</span><span>la banane</span><span>le jambon</span></div>
+<div class="tw"><table>
+<tr><th>Les boissons</th><th>Les produits laitiers</th><th>Les fruits et légumes</th><th>La viande et le poisson</th></tr>
+<tr><td style="font-weight:400">&nbsp;<br>&nbsp;<br>&nbsp;</td><td></td><td></td><td></td></tr>
+</table></div></div>
+
+<div class="ex"><div class="n">B·5</div><p class="q">Qu'est-ce que c'est ? Écris le nom de l'objet scolaire (avec un / une / des).</p>
+<ol type="a">
+  <li>On l'utilise pour effacer. <span class="b"></span></li>
+  <li>On les utilise pour couper le papier. <span class="b"></span></li>
+  <li>On l'utilise pour tracer des lignes droites. <span class="b"></span></li>
+  <li>On y met les stylos et les crayons. <span class="b"></span></li>
+  <li>On l'utilise pour faire des calculs. <span class="b"></span></li>
+  <li>On l'utilise pour dessiner des cercles. <span class="b"></span></li>
+  <li>On l'utilise pour tailler le crayon. <span class="b"></span></li>
+  <li>On y écrit les devoirs et les dates. <span class="b"></span></li>
+</ol></div>
+
+<div class="ex"><div class="n">B·6</div><p class="q">Complète avec : le petit déjeuner, le déjeuner, le goûter, le dîner.</p>
+<ol type="a">
+  <li>Le matin, avant l'école, je prends <span class="b"></span>.</li>
+  <li>À midi, je mange à la cantine : c'est <span class="b"></span>.</li>
+  <li>À 16 h 30, après l'école, je prends <span class="b"></span> : du pain et du chocolat.</li>
+  <li>Le soir, à 20 heures, toute la famille prend <span class="b"></span>.</li>
+</ol></div>
+
+<div class="ex"><div class="n">B·7</div><p class="q">Complète le texte avec les mots donnés.</p>
+<div class="bank"><span>cahiers</span><span>trousse</span><span>sac à dos</span><span>récré</span><span>gâteau</span><span>cantine</span><span>poisson</span><span>eau</span></div>
+<p>Le matin, je mets mes (1) <span class="b"></span> et ma (2) <span class="b"></span> dans mon (3) <span class="b"></span>. À la (4) <span class="b"></span>, à 10 heures, je mange un (5) <span class="b"></span>. À midi, à la (6) <span class="b"></span>, je mange du (7) <span class="b"></span> avec des légumes et je bois de l'(8) <span class="b"></span>.</p>
+</div>
+</section>
+
+<!-- ====================== C ====================== -->
+<section id="C">
+<h2>Activité C — Grammaire</h2>
+
+<!-- C1 -->
+<h3>C1 · Les prépositions de lieu</h3>
+<div class="rule">
+  <div class="tag">Правило</div>
+  <p>Предлоги места отвечают на вопрос <b>Où ?</b> (Где?).</p>
+  <div class="tw"><table>
+  <tr><th>Français</th><th>Português</th><th>Русский</th></tr>
+  <tr><td>sur ≠ sous</td><td>em cima de ≠ debaixo de</td><td>на ≠ под</td></tr>
+  <tr><td>dans</td><td>dentro de / em</td><td>в, внутри</td></tr>
+  <tr><td>devant ≠ derrière</td><td>à frente de ≠ atrás de</td><td>перед ≠ за</td></tr>
+  <tr><td>entre … et …</td><td>entre … e …</td><td>между … и …</td></tr>
+  <tr><td>à côté de</td><td>ao lado de</td><td>рядом с</td></tr>
+  <tr><td>en face de</td><td>em frente de</td><td>напротив</td></tr>
+  <tr><td>près de ≠ loin de</td><td>perto de ≠ longe de</td><td>близко от ≠ далеко от</td></tr>
+  <tr><td>à gauche de ≠ à droite de</td><td>à esquerda de ≠ à direita de</td><td>слева от ≠ справа от</td></tr>
+  <tr><td>au-dessus de ≠ au-dessous de</td><td>por cima de ≠ por baixo de</td><td>над ≠ ниже, под</td></tr>
+  </table></div>
+  <h4>Внимание: предлоги с <i>de</i> сливаются с артиклем</h4>
+  <ul>
+    <li><b>de + le = du</b> → à côté <b>du</b> lit</li>
+    <li><b>de + les = des</b> → près <b>des</b> chaises</li>
+    <li>de + la = <b>de la</b> (без изменений) → en face <b>de la</b> fenêtre</li>
+    <li>de + l' = <b>de l'</b> (без изменений, перед гласной или h) → loin <b>de l'</b>école</li>
+  </ul>
+  <p class="hint">Sur, sous, dans, devant, derrière, entre — без «de»: sur le lit, sous la table, devant la porte.</p>
+</div>
+
+<div class="ex"><div class="n">C1·1</div><p class="q">Observe la chambre et entoure l'option correcte.</p>
+<svg class="room" viewBox="0 0 640 300" role="img" aria-label="Комната: слева шкаф, перед ним мяч; дальше кровать, стул, стол; на столе книги, под столом кот, над столом лампа; справа от стола окно.">
+  <line x1="0" y1="250" x2="640" y2="250" stroke="currentColor" stroke-opacity=".35" stroke-width="2"/>
+  <!-- armoire -->
+  <rect x="24" y="70" width="96" height="180" rx="4" fill="#b98a5e" stroke="#6b4a2e" stroke-width="2"/>
+  <line x1="72" y1="78" x2="72" y2="242" stroke="#6b4a2e" stroke-width="2"/>
+  <text x="44" y="64">l'armoire</text>
+  <!-- ballon devant l'armoire -->
+  <circle cx="72" cy="232" r="17" fill="#e8f0ff" stroke="#2647b8" stroke-width="3"/>
+  <text x="96" y="285">le ballon</text>
+  <!-- lit -->
+  <rect x="140" y="190" width="170" height="40" rx="6" fill="#7aa0e8" stroke="#2c4a9c" stroke-width="2"/>
+  <rect x="140" y="150" width="14" height="100" fill="#6b4a2e"/>
+  <rect x="296" y="182" width="14" height="68" fill="#6b4a2e"/>
+  <rect x="158" y="176" width="46" height="18" rx="6" fill="#ffffff" stroke="#2c4a9c"/>
+  <text x="208" y="172">le lit</text>
+  <!-- chaise -->
+  <rect x="336" y="140" width="10" height="110" fill="#c8323c"/>
+  <rect x="336" y="200" width="46" height="10" fill="#c8323c"/>
+  <rect x="372" y="200" width="10" height="50" fill="#c8323c"/>
+  <text x="330" y="132">la chaise</text>
+  <!-- table -->
+  <rect x="404" y="180" width="140" height="12" fill="#8a6a45"/>
+  <rect x="412" y="192" width="10" height="58" fill="#8a6a45"/>
+  <rect x="526" y="192" width="10" height="58" fill="#8a6a45"/>
+  <text x="446" y="210">la table</text>
+  <!-- livres sur la table -->
+  <rect x="430" y="164" width="46" height="8" fill="#2647b8"/><rect x="434" y="156" width="40" height="8" fill="#1d7a4a"/><rect x="428" y="172" width="50" height="8" fill="#c8323c"/>
+  <text x="482" y="170">les livres</text>
+  <!-- chat sous la table -->
+  <ellipse cx="474" cy="238" rx="24" ry="12" fill="#444"/><circle cx="496" cy="226" r="10" fill="#444"/>
+  <polygon points="490,218 493,208 498,217" fill="#444"/><polygon points="497,217 502,208 504,219" fill="#444"/>
+  <text x="430" y="275">le chat</text>
+  <!-- lampe au-dessus -->
+  <line x1="474" y1="0" x2="474" y2="40" stroke="currentColor" stroke-opacity=".5" stroke-width="2"/>
+  <polygon points="452,62 496,62 486,40 462,40" fill="#f2c94c" stroke="#9a7a10" stroke-width="2"/>
+  <text x="504" y="56">la lampe</text>
+  <!-- fenêtre à droite -->
+  <rect x="568" y="60" width="56" height="80" fill="#cfe4ff" stroke="#2c4a9c" stroke-width="3"/>
+  <line x1="596" y1="60" x2="596" y2="140" stroke="#2c4a9c" stroke-width="2"/><line x1="568" y1="100" x2="624" y2="100" stroke="#2c4a9c" stroke-width="2"/>
+  <text x="560" y="160">la fenêtre</text>
+</svg>
+<ol type="a">
+  <li>Le chat est <span class="choice"><i>sur</i> / <i>sous</i></span> la table.</li>
+  <li>Les livres sont <span class="choice"><i>sur</i> / <i>sous</i></span> la table.</li>
+  <li>La lampe est <span class="choice"><i>au-dessus de</i> / <i>au-dessous de</i></span> la table.</li>
+  <li>La chaise est <span class="choice"><i>entre</i> / <i>devant</i></span> le lit et la table.</li>
+  <li>L'armoire est <span class="choice"><i>à gauche du</i> / <i>à droite du</i></span> lit.</li>
+  <li>La fenêtre est <span class="choice"><i>à gauche de</i> / <i>à droite de</i></span> la table.</li>
+  <li>Le ballon est <span class="choice"><i>devant</i> / <i>derrière</i></span> l'armoire.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C1·2</div><p class="q">Complète avec du, de la, de l' ou des.</p>
+<ol type="a">
+  <li>Le chat dort à côté <span class="b s"></span> canapé.</li>
+  <li>La pharmacie est en face <span class="b s"></span> école.</li>
+  <li>Le cahier est près <span class="b s"></span> trousse.</li>
+  <li>Mon sac est à droite <span class="b s"></span> chaises.</li>
+  <li>J'habite loin <span class="b s"></span> collège.</li>
+  <li>La lampe est au-dessus <span class="b s"></span> lit.</li>
+  <li>Le parking est près <span class="b s"></span> maison.</li>
+  <li>L'armoire est à gauche <span class="b s"></span> fenêtre.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C1·3</div><p class="q">Écris le contraire.</p>
+<div class="cols"><ul>
+  <li>sur ≠ <span class="b"></span></li>
+  <li>devant ≠ <span class="b"></span></li>
+  <li>à gauche de ≠ <span class="b"></span></li>
+</ul><ul>
+  <li>près de ≠ <span class="b"></span></li>
+  <li>au-dessus de ≠ <span class="b"></span></li>
+</ul></div></div>
+
+<div class="ex"><div class="n">C1·4</div><p class="q">Traduis en français.</p>
+<ol type="a">
+  <li>O livro está em cima da mesa. <span class="b l"></span></li>
+  <li>O gato está debaixo da cama. <span class="b l"></span></li>
+  <li>A cadeira está entre a secretária e a cama. <span class="b l"></span></li>
+  <li>A escola fica perto do parque. <span class="b l"></span></li>
+  <li>A mochila está atrás da porta. <span class="b l"></span></li>
+</ol></div>
+
+<!-- C2 -->
+<h3>C2 · Les articles partitifs</h3>
+<div class="rule">
+  <div class="tag">Правило</div>
+  <p>Партитивный артикль означает <b>«немного, какое-то количество»</b> того, что не считают поштучно (хлеб, вода, мясо). На русский он не переводится: <i>Je mange <b>du</b> pain</i> — Я ем хлеб. На португальский тоже: <i>Como pão.</i></p>
+  <div class="tw"><table>
+  <tr><th>Когда</th><th>Артикль</th><th>Пример</th></tr>
+  <tr><td>мужской род</td><td><b>du</b></td><td>du pain, du lait, du fromage</td></tr>
+  <tr><td>женский род</td><td><b>de la</b></td><td>de la viande, de la soupe, de la confiture</td></tr>
+  <tr><td>перед гласной или h</td><td><b>de l'</b></td><td>de l'eau, de l'huile</td></tr>
+  <tr><td>множественное число</td><td><b>des</b></td><td>des légumes, des pâtes, des frites</td></tr>
+  </table></div>
+  <h4>Три важных случая</h4>
+  <ol>
+    <li><b>Отрицание → de / d'</b>: Je mange <b>du</b> pain → Je ne mange pas <b>de</b> pain. Elle boit <b>de l'</b>eau → Elle ne boit pas <b>d'</b>eau.</li>
+    <li><b>Количество → de / d'</b>: beaucoup <b>de</b> sucre, un peu <b>de</b> lait, un verre <b>d'</b>eau, un kilo <b>de</b> pommes.</li>
+    <li><b>После aimer, adorer, détester, préférer → определённый артикль (le, la, l', les)</b>, потому что речь о вкусах в целом: J'aime <b>le</b> chocolat. Je déteste <b>les</b> légumes.</li>
+  </ol>
+</div>
+
+<div class="ex"><div class="n">C2·1</div><p class="q">Entoure le partitif correct.</p>
+<ol type="a">
+  <li>Je bois <span class="choice"><i>du</i> / <i>de la</i> / <i>de l'</i></span> eau.</li>
+  <li>Tu manges <span class="choice"><i>du</i> / <i>de la</i> / <i>des</i></span> pain.</li>
+  <li>Elle prend <span class="choice"><i>du</i> / <i>de la</i> / <i>des</i></span> confiture.</li>
+  <li>Nous mangeons <span class="choice"><i>du</i> / <i>de la</i> / <i>des</i></span> frites.</li>
+  <li>Vous voulez <span class="choice"><i>du</i> / <i>de la</i> / <i>de l'</i></span> thé ?</li>
+  <li>Ils achètent <span class="choice"><i>du</i> / <i>de la</i> / <i>des</i></span> fromage.</li>
+  <li>Je mets <span class="choice"><i>du</i> / <i>de la</i> / <i>de l'</i></span> huile dans la salade.</li>
+  <li>Le soir, on mange <span class="choice"><i>du</i> / <i>de la</i> / <i>des</i></span> soupe.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C2·2</div><p class="q">Complète avec du, de la, de l' ou des.</p>
+<p>Au petit déjeuner, je prends (1) <span class="b s"></span> lait, (2) <span class="b s"></span> céréales et (3) <span class="b s"></span> jus d'orange. À midi, je mange (4) <span class="b s"></span> viande, (5) <span class="b s"></span> riz et (6) <span class="b s"></span> salade. Au goûter, je mange (7) <span class="b s"></span> pain avec (8) <span class="b s"></span> chocolat. Je bois toujours (9) <span class="b s"></span> eau.</p></div>
+
+<div class="ex"><div class="n">C2·3</div><p class="q">Mets les phrases à la forme négative.</p>
+<ol type="a">
+  <li>Je mange de la viande. → <span class="b l"></span></li>
+  <li>Il boit du café. → <span class="b l"></span></li>
+  <li>Nous prenons des frites. → <span class="b l"></span></li>
+  <li>Elle veut de l'eau. → <span class="b l"></span></li>
+  <li>Tu achètes du pain. → <span class="b l"></span></li>
+  <li>Ils mangent des légumes. → <span class="b l"></span></li>
+</ol></div>
+
+<div class="ex"><div class="n">C2·4</div><p class="q">Article défini (le, la, l', les), partitif (du, de la, de l', des) ou de / d' ?</p>
+<ol type="a">
+  <li>J'adore <span class="b s"></span> chocolat, alors je mange souvent <span class="b s"></span> chocolat.</li>
+  <li>Elle déteste <span class="b s"></span> poisson. Elle ne mange jamais <span class="b s"></span> poisson.</li>
+  <li>Tu aimes <span class="b s"></span> fraises ? — Oui, je mange <span class="b s"></span> fraises tous les jours.</li>
+  <li>Je voudrais un verre <span class="b s"></span> eau, s'il vous plaît.</li>
+  <li>Il y a beaucoup <span class="b s"></span> sucre dans les sodas.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C2·5</div><p class="q">Corrige l'erreur.</p>
+<ol type="a">
+  <li>Je bois de le lait. → <span class="b l"></span></li>
+  <li>Il ne mange pas du pain. → <span class="b l"></span></li>
+  <li>Nous mangeons de les pâtes. → <span class="b l"></span></li>
+  <li>Elle prend de la eau. → <span class="b l"></span></li>
+  <li>J'aime du fromage. → <span class="b l"></span></li>
+</ol></div>
+
+<!-- C3 -->
+<h3>C3 · Le présent de l'indicatif</h3>
+<div class="rule">
+  <div class="tag">Правило · правильные глаголы</div>
+  <p><b>1-я группа (-er)</b>: отбрасываем -er и добавляем окончания <em class="end">-e, -es, -e, -ons, -ez, -ent</em>.<br>
+  <b>2-я группа (-ir, как finir)</b>: отбрасываем -ir и добавляем <em class="end">-is, -is, -it, -issons, -issez, -issent</em>.</p>
+  <div class="tw"><table class="conj">
+  <tr><th></th><th>parler</th><th>finir</th></tr>
+  <tr><td>je / j'</td><td>parl<em class="end">e</em></td><td>fin<em class="end">is</em></td></tr>
+  <tr><td>tu</td><td>parl<em class="end">es</em></td><td>fin<em class="end">is</em></td></tr>
+  <tr><td>il / elle / on</td><td>parl<em class="end">e</em></td><td>fin<em class="end">it</em></td></tr>
+  <tr><td>nous</td><td>parl<em class="end">ons</em></td><td>fin<em class="end">issons</em></td></tr>
+  <tr><td>vous</td><td>parl<em class="end">ez</em></td><td>fin<em class="end">issez</em></td></tr>
+  <tr><td>ils / elles</td><td>parl<em class="end">ent</em></td><td>fin<em class="end">issent</em></td></tr>
+  </table></div>
+  <p class="hint">Так же: écouter, regarder, aimer, habiter, travailler, jouer… / choisir, réussir, grandir. Особенности: manger → nous mang<b>e</b>ons; commencer → nous commen<b>ç</b>ons. Окончания -e, -es, -ent не произносятся: je parle, tu parles, ils parlent звучат одинаково.</p>
+</div>
+
+<div class="rule">
+  <div class="tag">Правило · неправильные глаголы (учить наизусть!)</div>
+  <div class="tw"><table class="conj">
+  <tr><th></th><th>être</th><th>avoir</th><th>aller</th><th>faire</th><th>prendre</th></tr>
+  <tr><td>je / j'</td><td>suis</td><td>ai</td><td>vais</td><td>fais</td><td>prends</td></tr>
+  <tr><td>tu</td><td>es</td><td>as</td><td>vas</td><td>fais</td><td>prends</td></tr>
+  <tr><td>il / elle / on</td><td>est</td><td>a</td><td>va</td><td>fait</td><td>prend</td></tr>
+  <tr><td>nous</td><td>sommes</td><td>avons</td><td>allons</td><td>faisons</td><td>prenons</td></tr>
+  <tr><td>vous</td><td>êtes</td><td>avez</td><td>allez</td><td>faites</td><td>prenez</td></tr>
+  <tr><td>ils / elles</td><td>sont</td><td>ont</td><td>vont</td><td>font</td><td>prennent</td></tr>
+  </table></div>
+  <div class="tw"><table class="conj">
+  <tr><th></th><th>vouloir</th><th>pouvoir</th><th>venir</th><th>sortir</th></tr>
+  <tr><td>je</td><td>veux</td><td>peux</td><td>viens</td><td>sors</td></tr>
+  <tr><td>tu</td><td>veux</td><td>peux</td><td>viens</td><td>sors</td></tr>
+  <tr><td>il / elle / on</td><td>veut</td><td>peut</td><td>vient</td><td>sort</td></tr>
+  <tr><td>nous</td><td>voulons</td><td>pouvons</td><td>venons</td><td>sortons</td></tr>
+  <tr><td>vous</td><td>voulez</td><td>pouvez</td><td>venez</td><td>sortez</td></tr>
+  <tr><td>ils / elles</td><td>veulent</td><td>peuvent</td><td>viennent</td><td>sortent</td></tr>
+  </table></div>
+  <p class="hint">Ловушки: vous <b>êtes</b>, vous <b>faites</b> (не «faisez»); ils <b>sont</b> / <b>ont</b> / <b>vont</b> / <b>font</b>; ils <b>prennent</b> и ils <b>viennent</b> — с удвоенной n. Как prendre: apprendre, comprendre. Как venir: devenir. Как sortir: partir, dormir (je dors).</p>
+</div>
+
+<div class="ex"><div class="n">C3·1</div><p class="q">Conjugue au présent.</p>
+<div class="cols">
+<ul>
+  <li>prendre : je <span class="b"></span> · nous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>vouloir : tu <span class="b"></span> · vous <span class="b"></span> · elles <span class="b"></span></li>
+  <li>pouvoir : il <span class="b"></span> · nous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>venir : je <span class="b"></span> · vous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>sortir : tu <span class="b"></span> · nous <span class="b"></span> · elles <span class="b"></span></li>
+</ul>
+<ul>
+  <li>faire : je <span class="b"></span> · vous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>aller : tu <span class="b"></span> · nous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>être : je <span class="b"></span> · vous <span class="b"></span> · ils <span class="b"></span></li>
+  <li>avoir : j' <span class="b"></span> · nous <span class="b"></span> · ils <span class="b"></span></li>
+</ul></div></div>
+
+<div class="ex"><div class="n">C3·2</div><p class="q">Conjugue le verbe entre parenthèses au présent.</p>
+<ol>
+  <li>Nous <span class="b"></span> (être) en troisième.</li>
+  <li>Tu <span class="b"></span> (avoir) un nouveau cahier ?</li>
+  <li>Ils <span class="b"></span> (aller) au collège en bus.</li>
+  <li>Vous <span class="b"></span> (faire) du sport le mercredi ?</li>
+  <li>Je <span class="b"></span> (prendre) le petit déjeuner à 7 heures.</li>
+  <li>Elle <span class="b"></span> (vouloir) devenir médecin.</li>
+  <li>Nous ne <span class="b"></span> (pouvoir) pas sortir ce soir.</li>
+  <li>Mes amis <span class="b"></span> (venir) chez moi samedi.</li>
+  <li>Tu <span class="b"></span> (sortir) avec tes copains ?</li>
+  <li>Les élèves <span class="b"></span> (prendre) des notes.</li>
+  <li>Je <span class="b"></span> (aller) à la boulangerie.</li>
+  <li>Vous <span class="b"></span> (être) français ?</li>
+  <li>Ils <span class="b"></span> (faire) leurs devoirs.</li>
+  <li>On <span class="b"></span> (pouvoir) entrer ?</li>
+  <li>Je <span class="b"></span> (venir) du Portugal.</li>
+  <li>Elles <span class="b"></span> (vouloir) du gâteau.</li>
+  <li>Nous <span class="b"></span> (sortir) à 17 heures.</li>
+  <li>Tu <span class="b"></span> (finir) tes devoirs.</li>
+  <li>Nous <span class="b"></span> (manger) à la cantine.</li>
+  <li>Ils <span class="b"></span> (choisir) un lycée général.</li>
+  <li>Vous <span class="b"></span> (parler) portugais ?</li>
+  <li>J' <span class="b"></span> (avoir) quatorze ans.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C3·3</div><p class="q">Entoure la bonne forme.</p>
+<ol type="a">
+  <li>Ils <span class="choice"><i>font</i> / <i>fait</i> / <i>faisons</i></span> du vélo.</li>
+  <li>Vous <span class="choice"><i>faisez</i> / <i>faites</i> / <i>font</i></span> la cuisine.</li>
+  <li>Je <span class="choice"><i>peut</i> / <i>peux</i> / <i>peuvent</i></span> t'aider.</li>
+  <li>Elle <span class="choice"><i>viens</i> / <i>vient</i> / <i>venons</i></span> demain.</li>
+  <li>Nous <span class="choice"><i>prenons</i> / <i>prendons</i> / <i>prennons</i></span> le train.</li>
+  <li>Tu <span class="choice"><i>vas</i> / <i>va</i> / <i>vais</i></span> bien ?</li>
+  <li>Ils <span class="choice"><i>sont</i> / <i>ont</i> / <i>font</i></span> faim.</li>
+  <li>Ils <span class="choice"><i>veut</i> / <i>voulent</i> / <i>veulent</i></span> partir.</li>
+</ol></div>
+
+<div class="ex"><div class="n">C3·4</div><p class="q">Trouve l'infinitif.</p>
+<div class="cols"><ol type="a">
+  <li>vont → <span class="b"></span></li>
+  <li>font → <span class="b"></span></li>
+  <li>peuvent → <span class="b"></span></li>
+  <li>prennent → <span class="b"></span></li>
+  <li>viennent → <span class="b"></span></li>
+</ol><ol type="a" start="6">
+  <li>sortent → <span class="b"></span></li>
+  <li>sommes → <span class="b"></span></li>
+  <li>avez → <span class="b"></span></li>
+  <li>veux → <span class="b"></span></li>
+  <li>est → <span class="b"></span></li>
+</ol></div></div>
+
+<div class="ex"><div class="n">C3·5</div><p class="q">Complète le texte avec les verbes au présent.</p>
+<p>Je m'appelle Inês. J'(1) <span class="b s"></span> (avoir) 14 ans et je (2) <span class="b s"></span> (être) portugaise. Le matin, je (3) <span class="b s"></span> (prendre) le bus pour aller au collège. Mon frère et moi, nous (4) <span class="b s"></span> (aller) au même collège. Le mercredi, mes amies (5) <span class="b s"></span> (venir) chez moi et nous (6) <span class="b s"></span> (faire) nos devoirs ensemble. Le samedi, je (7) <span class="b s"></span> (sortir) avec mes copines. Mes parents (8) <span class="b s"></span> (vouloir) que je rentre à 20 heures, mais je ne (9) <span class="b s"></span> (pouvoir) pas toujours ! Et toi, tu (10) <span class="b s"></span> (sortir) le week-end ?</p></div>
+
+<h3>Autoévaluation — je suis prêt(e) si…</h3>
+<ul class="check">
+  <li>я понимаю на слух короткий текст о школе, досуге, еде, доме и каникулах;</li>
+  <li>я перевожу школьные принадлежности, еду, напитки и слова с уроков — с артиклем;</li>
+  <li>я ставлю правильный предлог места и помню du / de la / de l' / des после «de»;</li>
+  <li>я выбираю du / de la / de l' / des, а в отрицании — de / d';</li>
+  <li>я спрягаю être, avoir, aller, faire, prendre, vouloir, pouvoir, venir, sortir без подсказок.</li>
+</ul>
+</section>
+
+<!-- ====================== KEY ====================== -->
+<section id="K" class="key">
+<h2>Corrigés — ответы</h2>
+
+<h3>A · Compréhension orale</h3>
+<p><b>A1.1</b> a) troisième · b) ciseaux · c) une calculatrice · d) l'anglais</p>
+<p><b>A1.2</b> a) V · b) F (avec son frère) · c) V · d) F (elle va à la piscine)</p>
+<p><b>A2.1</b> Petit déjeuner : du lait, des céréales, une banane · Déjeuner : de la viande ou du poisson, du riz, des légumes · Goûter : du pain, du chocolat, un jus d'orange · Dîner : de la soupe, de la salade, du fromage</p>
+<p><b>A2.2</b> a) F — il ne boit pas de café · b) V · c) F — trois fois par semaine · d) F — il limite le temps devant les écrans</p>
+<p><b>A3.1</b> a) au premier étage · b) en face du lit · c) ses baskets · d) sort la poubelle · e) à la mer en train</p>
+<p><b>A3.2</b> un maillot de bain, des lunettes de soleil, une serviette de plage</p>
+
+<h3>B · Vocabulaire</h3>
+<p><b>B·1</b> a) o caderno · b) a borracha · c) o estojo · d) o pequeno-almoço · e) a carne · f) os legumes · g) a cozinha · h) lavar a loiça · i) as calças · j) a profissão</p>
+<p><b>B·2</b> a) la règle · b) le sac à dos · c) les ciseaux · d) le fromage · e) le jus d'orange · f) le pain · g) l'eau · h) la chambre · i) le train · j) le pied · k) les devoirs · l) l'emploi du temps</p>
+<p><b>B·3</b> a) le fromage · b) le poulet · c) le riz · d) le frigo · e) la carotte · f) la boulangerie</p>
+<p><b>B·4</b> Boissons : l'eau, le thé, le soda · Produits laitiers : le fromage, le yaourt, le beurre · Fruits et légumes : la pomme, la tomate, la banane · Viande et poisson : le poulet, le poisson, le jambon</p>
+<p><b>B·5</b> a) une gomme · b) des ciseaux · c) une règle · d) une trousse · e) une calculatrice · f) un compas · g) un taille-crayon · h) un agenda</p>
+<p><b>B·6</b> a) le petit déjeuner · b) le déjeuner · c) le goûter · d) le dîner</p>
+<p><b>B·7</b> 1 cahiers · 2 trousse · 3 sac à dos · 4 récré · 5 gâteau · 6 cantine · 7 poisson · 8 eau</p>
+
+<h3>C · Grammaire</h3>
+<p><b>C1·1</b> a) sous · b) sur · c) au-dessus de · d) entre · e) à gauche du · f) à droite de · g) devant</p>
+<p><b>C1·2</b> a) du · b) de l' · c) de la · d) des · e) du · f) du · g) de la · h) de la</p>
+<p><b>C1·3</b> sous · derrière · à droite de · loin de · au-dessous de</p>
+<p><b>C1·4</b> a) Le livre est sur la table. · b) Le chat est sous le lit. · c) La chaise est entre le bureau et le lit. · d) L'école est près du parc. · e) Le sac à dos est derrière la porte.</p>
+<p><b>C2·1</b> a) de l' · b) du · c) de la · d) des · e) du · f) du · g) de l' · h) de la</p>
+<p><b>C2·2</b> 1 du · 2 des · 3 du · 4 de la · 5 du · 6 de la · 7 du · 8 du · 9 de l'</p>
+<p><b>C2·3</b> a) Je ne mange pas de viande. · b) Il ne boit pas de café. · c) Nous ne prenons pas de frites. · d) Elle ne veut pas d'eau. · e) Tu n'achètes pas de pain. · f) Ils ne mangent pas de légumes.</p>
+<p><b>C2·4</b> a) le / du · b) le / de · c) les / des · d) d' · e) de</p>
+<p><b>C2·5</b> a) Je bois du lait. · b) Il ne mange pas de pain. · c) Nous mangeons des pâtes. · d) Elle prend de l'eau. · e) J'aime le fromage.</p>
+<p><b>C3·1</b> prendre : prends, prenons, prennent · vouloir : veux, voulez, veulent · pouvoir : peut, pouvons, peuvent · venir : viens, venez, viennent · sortir : sors, sortons, sortent · faire : fais, faites, font · aller : vas, allons, vont · être : suis, êtes, sont · avoir : ai, avons, ont</p>
+<p><b>C3·2</b> 1 sommes · 2 as · 3 vont · 4 faites · 5 prends · 6 veut · 7 pouvons · 8 viennent · 9 sors · 10 prennent · 11 vais · 12 êtes · 13 font · 14 peut · 15 viens · 16 veulent · 17 sortons · 18 finis · 19 mangeons · 20 choisissent · 21 parlez · 22 ai</p>
+<p><b>C3·3</b> a) font · b) faites · c) peux · d) vient · e) prenons · f) vas · g) ont · h) veulent</p>
+<p><b>C3·4</b> a) aller · b) faire · c) pouvoir · d) prendre · e) venir · f) sortir · g) être · h) avoir · i) vouloir · j) être</p>
+<p><b>C3·5</b> 1 ai · 2 suis · 3 prends · 4 allons · 5 viennent · 6 faisons · 7 sors · 8 veulent · 9 peux · 10 sors</p>
+</section>
+
+<section class="print-only" id="T">
+<h2>Textes pour l'écoute — читает взрослый вслух</h2>
+<p class="hint">Отрежь эту страницу до начала. Читай каждый текст медленно, два раза.</p>
+<h3>Document 1 — La rentrée de Léa</h3>
+<p>Salut ! Je m'appelle Léa, j'ai quatorze ans et je suis en troisième au collège Victor Hugo, à Lyon. C'est la rentrée ! Dans mon sac à dos, j'ai une trousse avec deux stylos, un crayon, une gomme et une règle. J'ai aussi un classeur, des cahiers et une calculatrice pour les maths. Ma matière préférée, c'est l'anglais. Après les cours, je fais du vélo avec mon frère ou je joue au volley. Le soir, je surfe sur Internet et je poste des photos sur Insta. Le mercredi après-midi, je vais à la piscine.</p>
+<h3>Document 2 — Une journée équilibrée</h3>
+<p>Le matin, au petit déjeuner, Hugo boit du lait et mange des céréales avec une banane. Il ne boit pas de café. À midi, à la cantine, il mange de la viande ou du poisson avec du riz et des légumes. Au goûter, il prend du pain avec du chocolat et un jus d'orange. Le soir, au dîner, la famille mange de la soupe, de la salade et du fromage. Hugo boit beaucoup d'eau, il dort huit heures par nuit et il fait du sport trois fois par semaine. Il limite le temps passé devant les écrans.</p>
+<h3>Document 3 — La maison de Sami</h3>
+<p>Sami habite dans une maison avec un jardin. Au rez-de-chaussée, il y a le salon, la cuisine et les toilettes. Au premier étage, il y a trois chambres et la salle de bains. Dans sa chambre, le lit est à côté de la fenêtre et le bureau est en face du lit. Sur le bureau, il y a un ordinateur et une lampe. Sous le lit, il y a ses baskets. À la maison, Sami range sa chambre et sort la poubelle ; sa sœur fait la vaisselle. En juillet, la famille part en vacances à la mer, en train. Dans sa valise, Sami met un maillot de bain, des lunettes de soleil et une serviette de plage.</p>
+</section>
+
+<footer>Составлено по «Informação Prova — Teste de Francês 9.º ano, novembro 2026» и страницам учебника 6–37 (Unité 0, Unité 1). Тексты для аудирования написаны для этой тренировки, не взяты из учебника.</footer>
+
+</div></div>
+
+<script>
+(function(){
+  var synth = window.speechSynthesis;
+  var buttons = document.querySelectorAll('button.say');
+  function reset(){ buttons.forEach(function(b){ b.classList.remove('stop'); b.textContent='▶ Écouter'; }); }
+  function frVoice(){
+    if(!synth) return null;
+    var v = synth.getVoices();
+    return v.find(function(x){return /^fr(-|_)FR/i.test(x.lang);}) || v.find(function(x){return /^fr/i.test(x.lang);}) || null;
+  }
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(!synth){ btn.textContent='Голос недоступен — прочитай текст'; return; }
+      var playing = btn.classList.contains('stop');
+      synth.cancel(); reset();
+      if(playing) return;
+      var u = new SpeechSynthesisUtterance(document.getElementById(btn.dataset.text).textContent);
+      u.lang = 'fr-FR'; u.rate = 0.85;
+      var v = frVoice(); if(v) u.voice = v;
+      u.onend = reset; u.onerror = reset;
+      btn.classList.add('stop'); btn.textContent='■ Stop';
+      synth.speak(u);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
